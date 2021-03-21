@@ -16,10 +16,10 @@ php -S 127.0.0.1:8070
 
 ## Type Hash
 
- Markup : - Default
-          - Bcrypt
-          - Hash Laravel (Default)
-          - Argon2I 
+- Default
+- Bcrypt
+- Hash Laravel (Default)
+- Argon2I 
 
 ## Rest API
 
