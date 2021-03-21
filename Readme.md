@@ -2,7 +2,7 @@
 
 Simple Hash Password with php
 
-## Runnin Local Server with CMD/Terminal
+## Running Local Server with CMD/Terminal
 
 Use PHP to install PassHashKu.
 
@@ -10,6 +10,24 @@ Use PHP to install PassHashKu.
 php -S 127.0.0.1:8070
 ```
 
+## Demo
+[PassHashKu](http://puppetkode.my.id/phphashku/)
+
+
+## Type Hash
+
+ Markup : - Default
+          - Bcrypt
+          - Hash Laravel (Default)
+          - Argon2I 
+
+## Rest API
+
+Use PassHashKu as RestAPI
+
+http://127.0.0.1:8070/generate.php?pass=1234&hash=default
+
+Rest API Ready to use: [PassHashKu](http://puppetkode.my.id/phphashku/generate.php?pass=123&hash=bcrypt)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
