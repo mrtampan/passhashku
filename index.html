@@ -1,0 +1,53 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mb-3">Password generator</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="text" class="form-control" name="passtext" id="passId" />
+    </div>
+    <select class="form-select mb-3" id="pickHash" aria-label="Default select example">
+        <option selected>Choose Type Encryption</option>
+        <option value="default">Default</option>
+        <option value="bcrypt">Bcrypt</option>
+        <option value="hashlaravel">Hash Laravel (Default)</option>
+        <option value="argon2I">Argon2I</option>
+      </select>
+    <div class="text-center"><button type="submit" onclick="onSubmit()" class="btn btn-primary btn-lg">Generate</button></div>
+    <div class="mt-5 bg-secondary p-3 text-white text-center" id="resultId"></div>
+</div>
+
+<script>
+function onSubmit(){
+    let passName = document.getElementById("passId").value;
+    let hashName = document.getElementById("pickHash").value;
+
+    fetch(window.location.origin + '/generate.php?pass=' + passName + '&hash=' + hashName, {
+        method: 'GET'
+    })
+    .then((response) => response.json())
+    .then((result) => {
+
+    if(result.status === true){
+        document.getElementById("resultId").innerText = result.data;
+    }else{
+        document.getElementById("resultId").innerText = result.message;
+    }
+
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert("Server tidak meresponse, Tolong refresh browser");
+    });
+
+}
+</script>
+
+</body>
+</html>
+
