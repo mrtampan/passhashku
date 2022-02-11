@@ -11,7 +11,7 @@ php -S 127.0.0.1:8070
 ```
 
 ## Demo
-[PassHashKu](http://puppetkode.my.id/phphashku/)
+[PassHashKu](http://mrtampan.ueuo.com/passhash/)
 
 
 ## Type Hash
